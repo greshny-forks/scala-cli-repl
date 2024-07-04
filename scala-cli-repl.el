@@ -35,7 +35,7 @@
 ;;; Code:
 (require 'term)
 (require 'comint)
-(require 'scala-mode)
+(require 'scala-ts-mode)
 (require 's)
 (require 'subr-x)
 
@@ -172,7 +172,7 @@ Argument END the end region."
 (defun scala-cli-repl-load-file (file-name)
   "Load a file to the scala-cli buffer.
 Argument FILE-NAME the file name."
-  (interactive (comint-get-source "Load Scala file: " nil '(scala-mode) t))
+  (interactive (comint-get-source "Load Scala file: " nil '(scala-ts-mode) t))
   (comint-check-source file-name)
   (with-temp-buffer
     (insert-file-contents file-name)
